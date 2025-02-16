@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./sogang_logo.png" type="image/x-icon" id="logo">
+    <title>서강대학교 - SAINT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="./sogang.style.css" rel="stylesheet">
+    <script src="./sogang.script.js"></script>
+</head>
+<body>
+    <script src="./sogang.script.js"></script>
+    <div class="background">
+    
+        <div class="header">
+            <img src="logo.png" alt="서강대 로고" class="logo">
+            <h1 class="saint red">SAINT</h1>
+            <p class="gray" style="font-size: 14px">Sogang Advanced Information<br>Network and Technology</p>
+        </div>
+        <div class="body">
+            <div class="body__line">
+                <div class="body__line__red">
+                </div>
+            </div>
+            <div class="body__left">
+                <img src="saint그림.png" alt="가브리엘관&알바트로스탑">
+            </div>
+            <div class="body__right">
+                <div class="body__right__login">
+                    <div class="body__right__login__title">
+                        <img src="./member.gif" alt="화살표">
+                        <p class="member">MEMBER LOGIN</p>
+                    </div>
+                    <div class="body__right__login__body">
+                        <div class="body__right__login__body__left">
+                            <p id="id">사번 혹은 학번(UserID)</p>
+                            <input type="text" name="code" title="이 입력란을 작성하세요." id="code" onfocus="click_id()" onblur="no_click_id()">
+                            <p id="password">비밀번호(Password)</p>
+                            <input type="password" name="비밀번호" id="pw_input" title="이 입력란을 작성하세요." onfocus="click_pw()" onblur="no_click_pw()">
+                            <div class="login__body__left__id">
+                                <input type="checkbox" name="아이디 저장"> 
+                                아이디 저장
+                                <i id="eye" class="fa-solid fa-eye" onclick="tran()"></i>
+                            </div>
+                            <div id="alert" style="color: transparent;">
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <p>사용자 인증에 실패했습니다.</p>
+                            </div>
+                        </div>
+                        <div class="body__right__login__body__right">
+                            <button type="submit" onclick="login()">
+                            LOGIN
+                            </button>
+                        </div>
+                    </div>
+                    <div class="body__right__login__help">
+                        <a href="#" onclick="openPopup('https://saint.sogang.ac.kr/irj/servlet/prt/portal/prtroot/sogang.ac~ui.pdk.search_id_pwd.SearchIDPWD?mode=schID','popup1','width=600px, height=400px'); return false;">
+                            <img src="돋보기.png" alt="돋보기" width="30px" height="21px">
+                            <p class="black" style="margin: 0px 45px;">아이디 찾기</p>
+                            <p class="gray" style="margin: 0px 53px;">Search ID</p>
+                        </a>
+                        <div class="line"></div>
+                        <a href="#" onclick="openPopup('https://saint.sogang.ac.kr/irj/servlet/prt/portal/prtroot/sogang.ac~ui.pdk.search_id_pwd.SearchIDPWD?mode=schPW','popup2','width=600px, height=400px'); return false;">
+                            <img src="돋보기.png" alt="돋보기" width="30px" height="21px">
+                            <p class="black" style="margin: 0px 38px;">비밀번호 찾기</p>
+                            <p class="gray" style="margin: 0px 50px;">Search PW</p>
+                        </a>
+                        <div class="line"></div>
+                        <a href="#" onclick="openPopup('https://saint.sogang.ac.kr/irj/servlet/prt/portal/prtroot/sogang.ac~ui.pdk.search_id_pwd.SearchIDPWD?mode=schUL','popup3','width=600px, height=400px'); return false;">
+                            <img src="자물쇠.png" alt="자물쇠" width="25px" height="21px">
+                            <p class="black" style="margin: 0px 31px;">아이디 잠금해제</p>
+                            <p class="gray" style="margin: 0px 52px;">Unlock ID</p>
+                        </a>    
+                    </div>
+                </div>
+                <div class="body__right__notification">
+                    <div class="body__right__notification__title">
+                        <img src="./notice.gif" alt="종">
+                        공지사항
+                    </div>
+                    <div class="body__right__notification__list">
+                        <p>2024.09.23</p>
+                        <a href="#" title="보이스피싱 주의" onclick="openPopup('https://www.sogang.ac.kr/ko/detail/545088?namepage=StoryNotificationGeneral&text=%EC%84%9C%EA%B0%95+Story&redirect=/ko/story/notification-general','popup4','width=800px, height=800px'); return false;">[발전홍보팀] 교내 부서 사칭 보이스피싱 주의 안내</a>
+                        <p>-</p>
+                        <p>2024.09.23</p>
+                        <a href="#" title="냉방 중단" onclick="openPopup('https://www.sogang.ac.kr/ko/detail/545085?namepage=StoryNotificationGeneral&text=%EC%84%9C%EA%B0%95+Story&redirect=/ko/story/notification-general','popup4','width=800px, height=800px'); return false;">[시설팀] 교내 냉방 중단 안내 (9/30~)</a>
+                        <p>-</p>
+                        <p>2024.09.23</p>
+                        <a href="#" title="하비에르 캄보디아" onclick="openPopup('https://www.sogang.ac.kr/ko/detail/545084?namepage=StoryNotificationGeneral&text=%EC%84%9C%EA%B0%95+Story&redirect=/ko/story/notification-general','popup4','width=800px, height=800px'); return false;">[이냐시오인재센터] 2024 하비에르 Immersion 캄보디아 18기 참가자 모집 (~1···)</a>
+                    </div>
+                    <div class="body__right__notification__help">
+                        <div class="right__notification__help__list">
+                            <a href="#" target="_blank">
+                                학번 안내
+                                <i class="fa-solid fa-diamond-turn-right"></i>
+                            </a>
+                            <p>2000년 이전 학번 안내</p>
+                        </div>
+                        <div class="right__notification__help__list">
+                            <a href="#" target="_blank">
+                                팝업차단 안내
+                                <i class="fa-solid fa-diamond-turn-right"></i>
+                            </a>
+                            <p>브라우져 팝업 설정 안내</p>
+                        </div>
+                        <div class="right__notification__help__list">
+                            <a href="#" target="_blank">
+                                로그인 도움말
+                                <i class="fa-solid fa-diamond-turn-right"></i>
+                            </a>
+                            <p>로그인관련 안내 도움말</p>
+                        </div>  
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer__line__gray">
+            </div>
+            <div class="footer__left">
+                <p> COPYRIGHT (C) SOGANG UNIVERSITY.ALL RIGHTS RESERVED.</p>
+            </div>
+            <div class="footer__right">
+                <a href="#" onclick="openPopup('https://www.sogang.ac.kr/notice/private_rule/privacy05.html','popup4','width=800px, height=700px'); return false;">개인정보처리방침></a>
+                <a href="#" onclick="openPopup('https://www.sogang.ac.kr/ko/campus/administrative-support/report-inconvenience','popup6','width=800px, height=700px');return false">이용불편신고></a>
+            </div>
+            
+    
+        </div>
+    </div>
+    
+
+</body>
+</html>
